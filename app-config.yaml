@@ -1,0 +1,85 @@
+app:
+  title: Plataforma Backstage
+  baseUrl: http://localhost:3000
+organization:
+  name: Banco BMG
+
+backend:
+  baseUrl: http://localhost:7007
+  reading:
+    allow:
+      - host: github.com
+      - host: dev.azure.com
+  listen:
+    port: 7007
+    host: localhost
+  csp:
+    img-src:
+      - 'self'
+      - 'data:'
+      - '*'
+      - 'self https://backstage.bmg.cloud'
+    connect-src: ["'self'", 'http:', 'https:']
+
+  cors:
+    origin: [http://localhost:3000]
+    methods: [GET, HEAD, PATCH, POST, PUT, DELETE]
+    credentials: true
+
+  database:
+    client: pg
+    connection:
+      host: localhost
+      port: 5432
+      user: postgres
+      password: 1q2w3e
+integrations:
+  azure:
+    - host: azuredevops.bancobmg.com.br
+      token: cabmrrjf3n2tqesj3xlruofdqdlqowdmat43aiads34enio2mpwq
+  github:
+    - host: github.com
+      token: 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
+
+techdocs:
+  builder: 'local' # Alternatives - 'external'
+  generator:
+    runIn: 'docker' # Alternatives - 'local'
+  publisher:
+    type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
+
+auth:
+  environment: development # eg: production|staging|review|develop
+  providers:
+    github:
+      development:
+        clientId: 76291b18371cffd5f7b6
+        clientSecret: 388527b51e852b5bca71eb305cf9fa61da9e9e91
+
+catalog:
+  import:
+    entityFilename: catalog-info.yaml
+    pullRequestBranchName: backstage-integration
+  rules:
+    - allow: [Component, System, API, Resource, Location, User, Group, Template]
+
+  locations:
+    - type: url
+      target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all.yaml
+
+    # Local example template
+    - type: file
+      target: ../../templates/template-all.yaml
+      rules:
+        - allow: [Template]
+
+    # Local example organizational data
+    - type: file
+      target: ../../examples/org.yaml
+      rules:
+        - allow: [User, Group]
+
+    # - type: file
+    #   target: ../../examples/entities.yaml
+    #   rules:
+    #     - allow: [User, Group]
