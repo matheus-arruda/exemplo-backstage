@@ -13,8 +13,8 @@ metadata:
       title: Repositório
       icon: dashboard
       type: admin-dashboard
-annotations:
-  backstage.io/techdocs-ref: url:https://github.com/matheus-arruda/exemplo-backstage/blob/main/readme.md
+  annotations:
+    backstage.io/techdocs-ref: url:https://github.com/matheus-arruda/exemplo-backstage/blob/main/readme.md
 spec:
   type: library
   owner: componentes
