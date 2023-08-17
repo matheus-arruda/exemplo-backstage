@@ -1,8 +1,18 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: ${{ values.name | dump }}
+  name: Bmg Connection Manager
+  description: Pacote responsável pelo gerenciamento das conexões das aplicações .NET Core com os databases utilizados pelo Banco Bmg.
+  tags:
+    - template
+    - postgres
+    - db
+  links:
+    - url: https://azuredevops.bancobmg.com.br/DefaultCollection/Bmg.Arquitetura.Componentes/_git/Bmg.Connection.Manager?path=%2F&version=GBmaster
+      title: Repositório
+      icon: dashboard
+      type: admin-dashboard
 spec:
   type: library
-  owner: team:componentes
-  lifecycle: experimental
+  owner: componentes
+  lifecycle: production
