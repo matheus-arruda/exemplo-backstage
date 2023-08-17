@@ -2,7 +2,7 @@ apiVersion: scaffolder.backstage.io/v1beta3
 # https://backstage.io/docs/features/software-catalog/descriptor-format#kind-template
 kind: Template
 metadata:
-  name: Bmg Connection Manager
+  name: Bmg.Connection.Manager
   title: Componente BMG Connection Manager
   description: Pacote responsável pelo gerenciamento das conexões das aplicações .NET Core com os databases utilizados pelo Banco Bmg.
 spec:
@@ -10,7 +10,7 @@ spec:
   type: library
 
   parameters:
-    - title: Fill in some steps
+    - title: Configurações
       required:
         - name
       properties:
