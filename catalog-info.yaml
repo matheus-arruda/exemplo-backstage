@@ -2,6 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: Bmg.Connection.Manager
+  title: Componente BMG Connection Manager
   description: Pacote responsável pelo gerenciamento das conexões das aplicações .NET Core com os databases utilizados pelo Banco Bmg.
   tags:
     - template
@@ -12,6 +13,8 @@ metadata:
       title: Repositório
       icon: dashboard
       type: admin-dashboard
+annotations:
+  backstage.io/techdocs-ref: value
 spec:
   type: library
   owner: componentes
