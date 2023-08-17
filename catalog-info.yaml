@@ -6,12 +6,3 @@ spec:
   type: library
   owner: team:componentes
   lifecycle: experimental
-
-  apiVersion: backstage.io/v1alpha1
-kind: Component
-metadata:
-  name: ${{ values.name | dump }}
-spec:
-  type: library
-  owner: team:componentes
-  lifecycle: experimental
